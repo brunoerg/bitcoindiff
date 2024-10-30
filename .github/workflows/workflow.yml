@@ -36,7 +36,7 @@ jobs:
                 sudo ln -sfT clang++-18 /usr/bin/clang++
                 sudo ln -sfT clang-18 /usr/bin/clang
           elif [ "$RUNNER_OS" == "macOS" ]; then
-                brew install llvm autoconf automake libtool
+                brew install llvm@18 autoconf automake libtool
           fi
         shell: bash
 
@@ -55,7 +55,7 @@ jobs:
                 export PATH=/usr/local/bin:$PATH
                 export CC=clang
                 export CXX=clang++
-                export PATH="$(brew --prefix)/opt/llvm/bin:$PATH"
+                export PATH="$(brew --prefix)/opt/llvm@18/bin:$PATH"
                 make
           else
                 make -j$(nproc)
