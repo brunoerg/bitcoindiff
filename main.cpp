@@ -10,15 +10,6 @@
 #include <modules/rustbitcoin/module.h>
 #endif
 
-bool FuzzMe(const uint8_t *Data, size_t DataSize)
-{
-  return DataSize >= 3 &&
-         Data[0] == 'F' &&
-         Data[1] == 'U' &&
-         Data[2] == 'Z' &&
-         Data[3] == 'Z'; // :‑<
-}
-
 std::shared_ptr<bitcoinfuzz::Driver> driver = nullptr;
 
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size)
