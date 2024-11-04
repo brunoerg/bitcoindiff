@@ -1,0 +1,1 @@
+/Users/brunogarcia/projects/bitcoinfuzz-v2/modules/rustbitcoin/rust_bitcoin_lib/target/release/librust_bitcoin_lib.rlib: /Users/brunogarcia/projects/bitcoinfuzz-v2/modules/rustbitcoin/rust_bitcoin_lib/src/lib.rs

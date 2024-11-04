@@ -1,0 +1,10 @@
+/Users/brunogarcia/projects/bitcoinfuzz-v2/modules/rustbitcoin/rust_bitcoin_lib/target/release/deps/libsecp256k1_sys-198103103619a065.rmeta: /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/secp256k1-sys-0.10.1/src/lib.rs /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/secp256k1-sys-0.10.1/src/macros.rs /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/secp256k1-sys-0.10.1/src/types.rs /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/secp256k1-sys-0.10.1/src/recovery.rs
+
+/Users/brunogarcia/projects/bitcoinfuzz-v2/modules/rustbitcoin/rust_bitcoin_lib/target/release/deps/libsecp256k1_sys-198103103619a065.rlib: /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/secp256k1-sys-0.10.1/src/lib.rs /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/secp256k1-sys-0.10.1/src/macros.rs /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/secp256k1-sys-0.10.1/src/types.rs /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/secp256k1-sys-0.10.1/src/recovery.rs
+
+/Users/brunogarcia/projects/bitcoinfuzz-v2/modules/rustbitcoin/rust_bitcoin_lib/target/release/deps/secp256k1_sys-198103103619a065.d: /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/secp256k1-sys-0.10.1/src/lib.rs /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/secp256k1-sys-0.10.1/src/macros.rs /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/secp256k1-sys-0.10.1/src/types.rs /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/secp256k1-sys-0.10.1/src/recovery.rs
+
+/Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/secp256k1-sys-0.10.1/src/lib.rs:
+/Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/secp256k1-sys-0.10.1/src/macros.rs:
+/Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/secp256k1-sys-0.10.1/src/types.rs:
+/Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/secp256k1-sys-0.10.1/src/recovery.rs:

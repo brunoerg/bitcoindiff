@@ -1,0 +1,1 @@
+extern "C" void rust_bitcoin_script(const unsigned char* input, unsigned long length);

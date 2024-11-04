@@ -1,0 +1,10 @@
+/Users/brunogarcia/projects/bitcoinfuzz/modules/rustbitcoin/rust_bitcoin_lib/target/aarch64-apple-darwin/release/deps/libbitcoin_io-75d92704eb10865b.rmeta: /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitcoin-io-0.1.3/src/lib.rs /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitcoin-io-0.1.3/src/error.rs /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitcoin-io-0.1.3/src/macros.rs /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitcoin-io-0.1.3/src/bridge.rs
+
+/Users/brunogarcia/projects/bitcoinfuzz/modules/rustbitcoin/rust_bitcoin_lib/target/aarch64-apple-darwin/release/deps/libbitcoin_io-75d92704eb10865b.rlib: /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitcoin-io-0.1.3/src/lib.rs /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitcoin-io-0.1.3/src/error.rs /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitcoin-io-0.1.3/src/macros.rs /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitcoin-io-0.1.3/src/bridge.rs
+
+/Users/brunogarcia/projects/bitcoinfuzz/modules/rustbitcoin/rust_bitcoin_lib/target/aarch64-apple-darwin/release/deps/bitcoin_io-75d92704eb10865b.d: /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitcoin-io-0.1.3/src/lib.rs /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitcoin-io-0.1.3/src/error.rs /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitcoin-io-0.1.3/src/macros.rs /Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitcoin-io-0.1.3/src/bridge.rs
+
+/Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitcoin-io-0.1.3/src/lib.rs:
+/Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitcoin-io-0.1.3/src/error.rs:
+/Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitcoin-io-0.1.3/src/macros.rs:
+/Users/brunogarcia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitcoin-io-0.1.3/src/bridge.rs:
