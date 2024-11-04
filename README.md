@@ -10,6 +10,7 @@ Note this project is a WIP and might be not stable.
 cd modules/rust-bitcoin
 cd rust_bitcoin_lib && cargo build --release --target=aarch64-apple-darwin
 cd .. && make
+export CXXFLAGS="$CXXFLAGS -DRUST_BITCOIN"
 ```
 
 Change the `target` according to your architecture. You may need to modify the Makefile as well.
@@ -18,6 +19,7 @@ Change the `target` according to your architecture. You may need to modify the M
 ```bash
 cd modules/bitcoin
 make
+export CXXFLAGS="$CXXFLAGS -DBITCOIN_CORE"
 ```
 
 Once the modules are compiled, you can compile bitcoinfuzz and execute it:
