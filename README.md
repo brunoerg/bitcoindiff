@@ -8,9 +8,11 @@ Note this project is a WIP and might be not stable.
 ### rust-bitcoin
 ```bash
 cd modules/rust-bitcoin
-cd rust_bitcoin_lib && cargo build --release
+cd rust_bitcoin_lib && cargo build --release --target=aarch64-apple-darwin
 cd .. && make
 ```
+
+Change the `target` according to your architecture. You may need to modify the Makefile as well.
 
 ### Bitcoin Core
 ```bash
