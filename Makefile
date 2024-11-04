@@ -1,6 +1,6 @@
 all: bitcoinfuzz
 
-CXXFLAGS += -fsanitize=address,fuzzer -Wall -Wextra -std=c++20 -I include -I . -DBITCOIN_CORE -DRUST_BITCOIN
+CXXFLAGS += -fsanitize=address,fuzzer -Wall -Wextra -std=c++20 -I include -I .
 MODULES := $(wildcard modules/*/module.a)
 
 bitcoinfuzz: main.cpp driver.o include/bitcoinfuzz/basemodule.o
