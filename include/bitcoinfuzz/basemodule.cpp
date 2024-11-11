@@ -9,4 +9,9 @@ namespace bitcoinfuzz
     {
         return std::nullopt;
     }
+
+    std::optional<std::vector<bool>> BaseModule::deserialize_block(std::span<const uint8_t> buffer) const
+    {
+        return std::nullopt;
+    }
 }

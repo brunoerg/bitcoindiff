@@ -8,7 +8,6 @@
 #include <crypto/sha256.h>
 #include <logging.h>
 #include <pubkey.h>
-#include <random.h>
 #include <script/interpreter.h>
 #include <span.h>
 #include <uint256.h>
@@ -19,7 +18,8 @@
 
 SignatureCache::SignatureCache(const size_t max_size_bytes)
 {
-    uint256 nonce = GetRandHash();
+    // Random hash
+    uint256 nonce = uint256{123};
     // We want the nonce to be 64 bytes long to force the hasher to process
     // this chunk, which makes later hash computations more efficient. We
     // just write our 32-byte entropy, and then pad with 'E' for ECDSA and

@@ -16,6 +16,7 @@ export CXXFLAGS="$CXXFLAGS -DRUST_BITCOIN"
 Change the `target` according to your architecture. You may need to modify the Makefile as well.
 
 ### Bitcoin Core
+
 ```bash
 cd modules/bitcoin
 make

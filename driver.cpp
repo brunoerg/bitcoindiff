@@ -27,11 +27,26 @@ namespace bitcoinfuzz
         }
     }
 
+    void Driver::BlockDeserializationTarget(std::span<const uint8_t> buffer) const
+    {
+        std::optional<std::vector<bool>> last_response{std::nullopt};
+        for (auto& module : modules)
+        {
+            std::optional<std::vector<bool>> res{module.second->deserialize_block(buffer)};
+            if (!res.has_value() || res->empty()) continue;
+            if (last_response.has_value()) assert(*res == *last_response);
+            last_response = res.value();
+        }
+    }
+
     void Driver::Run(const uint8_t *data, const size_t size, const std::string &target) const
     {
         if (target == "script") {
             std::span<const uint8_t> buffer{data, size};
             this->ScriptTarget(buffer);
+        } else if (target == "block_deserialization") {
+            std::span<const uint8_t> buffer{data, size};
+            this->BlockDeserializationTarget(buffer);
         } else {
             std::cout << "Target not defined!" << std::endl;
             assert(false);

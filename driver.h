@@ -19,6 +19,7 @@ namespace bitcoinfuzz
     public:
         void LoadModule(std::shared_ptr<BaseModule> module);
         void ScriptTarget(std::span<const uint8_t>) const;
+        void BlockDeserializationTarget(std::span<const uint8_t> buffer) const;
         void Run(const uint8_t *data, const size_t size, const std::string& target) const;
     };
 }
