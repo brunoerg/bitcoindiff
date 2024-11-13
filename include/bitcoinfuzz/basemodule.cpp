@@ -14,4 +14,9 @@ namespace bitcoinfuzz
     {
         return std::nullopt;
     }
+
+    std::optional<bool> BaseModule::script_eval(const std::vector<uint8_t>& input_data, unsigned int flags, size_t version) const
+    {
+        return std::nullopt;
+    }
 }
