@@ -15,6 +15,16 @@ export CXXFLAGS="$CXXFLAGS -DRUST_BITCOIN"
 
 Change the `target` according to your architecture. You may need to modify the Makefile as well.
 
+### mako
+
+For the `script_eval` target, we recommend to get Mako from https://github.com/brunoerg/mako/tree/bitcoinfuzz since there are some checks that should be skipped for better fuzzing.
+
+```bash
+cd modules/mako
+export MAKO_LIB_PATH="path/to/libmako.a"
+make
+```
+
 ### Bitcoin Core
 
 ```bash

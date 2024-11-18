@@ -99,7 +99,7 @@ private:
     std::vector<unsigned char> m_program;
 
 public:
-    WitnessUnknown(unsigned int version, const std::vector<unsigned char>& program) : m_version(version), m_program(program) {}
+    WitnessUnknown(size_t version, const std::vector<unsigned char>& program) : m_version(version), m_program(program) {}
     WitnessUnknown(int version, const std::vector<unsigned char>& program) : m_version(static_cast<unsigned int>(version)), m_program(program) {}
 
     unsigned int GetWitnessVersion() const { return m_version; }
