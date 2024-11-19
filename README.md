@@ -7,13 +7,22 @@ Note this project is a WIP and might be not stable.
 
 ### rust-bitcoin
 ```bash
-cd modules/rust-bitcoin
+cd modules/rustbitcoin
 cd rust_bitcoin_lib && cargo build --release --target=aarch64-apple-darwin
 cd .. && make
 export CXXFLAGS="$CXXFLAGS -DRUST_BITCOIN"
 ```
 
 Change the `target` according to your architecture. You may need to modify the Makefile as well.
+
+### rust-miniscript 
+
+```bash
+cd modules/rustminiscript
+cd rust_miniscript_lib && cargo build --release --target=aarch64-apple-darwin
+cd .. && make
+export CXXFLAGS="$CXXFLAGS -DRUST_MINISCRIPT"
+```
 
 ### mako
 
