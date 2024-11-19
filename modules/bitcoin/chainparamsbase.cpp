@@ -40,4 +40,8 @@ std::unique_ptr<CBaseChainParams> CreateBaseChainParams(const ChainType chain)
     assert(false);
 }
 
-
+void SelectBaseParams(const ChainType chain)
+{
+    globalChainBaseParams = CreateBaseChainParams(chain);
+    //gArgs.SelectConfigNetwork(ChainTypeToString(chain));
+}
