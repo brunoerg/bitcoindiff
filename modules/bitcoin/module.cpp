@@ -63,7 +63,7 @@ std::optional<bool> Bitcoin::script_eval(const std::vector<uint8_t>& input_data,
     } else {
         sig_version = SigVersion::WITNESS_V0;
     }
-    return EvalScript(stack, script_sig, flags, FuzzedSignatureChecker(), sig_version, &error);
+    return EvalScript(stack, script_sig, flags, FuzzedSignatureChecker(), sig_version, nullptr);
 }
 
 std::optional<std::vector<bool>> Bitcoin::deserialize_block(std::span<const uint8_t> buffer) const
