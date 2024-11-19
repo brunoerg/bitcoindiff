@@ -792,7 +792,7 @@ bool SignTransaction(CMutableTransaction& mtx, const SigningProvider* keystore, 
         CTxIn& txin = mtx.vin[i];
         auto coin = coins.find(txin.prevout);
         if (coin == coins.end() || coin->second.IsSpent()) {
-            input_errors[i] = _("Input not found or already spent");
+            //input_errors[i] = ("Input not found or already spent");
             continue;
         }
         const CScript& prevPubKey = coin->second.out.scriptPubKey;
@@ -808,7 +808,7 @@ bool SignTransaction(CMutableTransaction& mtx, const SigningProvider* keystore, 
 
         // amount must be specified for valid segwit signature
         if (amount == MAX_MONEY && !txin.scriptWitness.IsNull()) {
-            input_errors[i] = _("Missing amount");
+            //input_errors[i] = _("Missing amount");
             continue;
         }
 
