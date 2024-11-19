@@ -7,7 +7,6 @@
 
 #include <randomenv.h>
 
-#include <clientversion.h>
 #include <compat/compat.h>
 #include <compat/cpuid.h>
 #include <crypto/sha512.h>
@@ -284,7 +283,7 @@ void RandAddStaticEnv(CSHA512& hasher)
 #endif
 
     // Bitcoin client version
-    hasher << CLIENT_VERSION;
+    hasher << 1;
 
 #if defined(HAVE_STRONG_GETAUXVAL)
     // Information available through getauxval()

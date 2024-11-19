@@ -1,6 +1,7 @@
 #include <span>
 
 #include "module.h"
+#include "descriptor.h"
 #include "script/script.h"
 #include "script/interpreter.h"
 #include "primitives/block.h"
@@ -64,6 +65,15 @@ std::optional<bool> Bitcoin::script_eval(const std::vector<uint8_t>& input_data,
         sig_version = SigVersion::WITNESS_V0;
     }
     return EvalScript(stack, script_sig, flags, FuzzedSignatureChecker(), sig_version, nullptr);
+}
+
+std::optional<bool> Bitcoin::descriptor_parse(std::string str) const
+{
+    FlatSigningProvider signing_provider;
+    std::string error;
+    const auto desc = Parse(str, signing_provider, error, /*require_checksum=*/true);
+    std::cout << error << std::endl;
+    return !desc.empty();
 }
 
 std::optional<std::vector<bool>> Bitcoin::deserialize_block(std::span<const uint8_t> buffer) const
