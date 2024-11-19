@@ -64,17 +64,33 @@ namespace bitcoinfuzz
         }
     }
 
+    void Driver::DescriptorParseTarget(std::span<const uint8_t> buffer) const 
+    {
+        FuzzedDataProvider provider(buffer.data(), buffer.size());
+        std::string desc{provider.ConsumeRemainingBytesAsString()};
+        std::optional<bool> last_response{std::nullopt};
+        for (auto& module : modules)
+        {
+            std::optional<bool> res{module.second->descriptor_parse(desc)};
+            if (!res.has_value()) continue;
+            std::cout << module.first << std::endl;
+            std::cout << *res << std::endl;
+            if (last_response.has_value()) assert(*res == *last_response);
+            last_response = *res;
+        }
+    }
+
     void Driver::Run(const uint8_t *data, const size_t size, const std::string &target) const
     {
+        std::span<const uint8_t> buffer{data, size};
         if (target == "script") {
-            std::span<const uint8_t> buffer{data, size};
             this->ScriptTarget(buffer);
         } else if (target == "block_deserialization") {
-            std::span<const uint8_t> buffer{data, size};
             this->BlockDeserializationTarget(buffer);
         } else if (target == "script_eval") {
-            std::span<const uint8_t> buffer{data, size};
             this->ScriptEvalTarget(buffer);
+        } else if (target == "descriptor_parse") {
+            this->DescriptorParseTarget(buffer);
         } else {
             std::cout << "Target not defined!" << std::endl;
             assert(false);

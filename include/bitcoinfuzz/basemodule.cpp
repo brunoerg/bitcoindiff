@@ -20,7 +20,7 @@ namespace bitcoinfuzz
         return std::nullopt;
     }
 
-    std::optional<bool> BaseModule::descriptor_parse(const std::string& str) const 
+    std::optional<bool> BaseModule::descriptor_parse(std::string str) const 
     {
         return std::nullopt;
     }
