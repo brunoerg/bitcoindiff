@@ -48,11 +48,7 @@ namespace bitcoinfuzz
         );
 
         auto flags = provider.ConsumeIntegral<unsigned int>();
-        auto version = provider.ConsumeIntegralInRange<size_t>(0, 1);
-        if (flags & (1U << 16)) return;
-        // Skip if flags are not in conformity.
-        if (flags & 256 && ~flags & (1 | 2048)) return;
-        if (flags & 2048 && ~flags & 1) return;
+        auto version = provider.PickValueInArray({0,1});
 
         std::optional<bool> last_response{std::nullopt};
         for (auto& module : modules)
