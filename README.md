@@ -40,6 +40,7 @@ make
 cd modules/bitcoin
 make
 export CXXFLAGS="$CXXFLAGS -DBITCOIN_CORE"
+export BOOST_LIB_DIR="path/to/boost/"
 ```
 
 Once the modules are compiled, you can compile bitcoinfuzz and execute it:
