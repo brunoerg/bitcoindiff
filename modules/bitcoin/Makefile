@@ -10,7 +10,7 @@ CXXFLAGS += -Wall -Wextra -std=c++20 \
             -I ./primitives \
             -I ./script
 
-BOOST_LIB_DIR = /opt/homebrew/lib/
+# BOOST_LIB_DIR = /opt/homebrew/lib/
 BOOST_LIBS = $(BOOST_LIB_DIR)libboost_filesystem.a $(BOOST_LIB_DIR)libboost_system.a
 SECP256K1_LIB = ../secp256k1/.libs/libsecp256k1.a
 UNIVALUE_LIB = ../univalue/build/libunivalue.a
