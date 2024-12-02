@@ -18,6 +18,10 @@
 #include <modules/rustminiscript/module.h>
 #endif
 
+#ifdef BTCD
+#include <modules/btcd/module.h>
+#endif
+
 std::shared_ptr<bitcoinfuzz::Driver> driver = nullptr;
 
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size)
@@ -35,6 +39,9 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size)
 #endif
 #ifdef RUST_MINISCRIPT
   driver->LoadModule(std::make_shared<bitcoinfuzz::module::Rustminiscript>());
+#endif
+#ifdef BTCD
+  driver->LoadModule(std::make_shared<bitcoinfuzz::module::Btcd>());
 #endif
   driver->Run(Data, Size, target);
   return 0;

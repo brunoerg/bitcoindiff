@@ -48,12 +48,11 @@ namespace bitcoinfuzz
         );
 
         auto flags = provider.ConsumeIntegral<unsigned int>();
-        auto version = provider.PickValueInArray({0,1});
 
         std::optional<bool> last_response{std::nullopt};
         for (auto& module : modules)
         {
-            std::optional<bool> res{module.second->script_eval(input_data, flags, version)};
+            std::optional<bool> res{module.second->script_eval(input_data, flags, /*version=*/0)};
             if (!res.has_value()) continue;
             if (last_response.has_value()) assert(*res == *last_response);
             last_response = *res;
@@ -69,8 +68,6 @@ namespace bitcoinfuzz
         {
             std::optional<bool> res{module.second->descriptor_parse(desc)};
             if (!res.has_value()) continue;
-            std::cout << module.first << std::endl;
-            std::cout << *res << std::endl;
             if (last_response.has_value()) assert(*res == *last_response);
             last_response = *res;
         }
