@@ -70,7 +70,6 @@ std::optional<bool> Bitcoin::descriptor_parse(std::string str) const
     FlatSigningProvider signing_provider;
     std::string error;
     const auto desc = Parse(str, signing_provider, error, /*require_checksum=*/true);
-    std::cout << error << std::endl;
     return !desc.empty();
 }
 
