@@ -34,6 +34,14 @@ export MAKO_LIB_PATH="path/to/libmako.a"
 make
 ```
 
+### btcd 
+
+```bash
+cd modules/btcd
+make
+export CXXFLAGS="$CXXFLAGS -DBTCD"
+```
+
 ### Bitcoin Core
 
 ```bash

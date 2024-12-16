@@ -56,15 +56,13 @@ std::optional<bool> Bitcoin::script_parse(std::span<const uint8_t> buffer) const
 
 std::optional<bool> Bitcoin::script_eval(const std::vector<uint8_t>& input_data, unsigned int flags, size_t version) const
 {
-    CScript script_sig(input_data.begin(), input_data.end());
+    CScript script(input_data.begin(), input_data.end());
+    if (script.empty()) return std::nullopt;
+
     std::vector<std::vector<unsigned char>> stack;
-    SigVersion sig_version;
-    if (version == 0) {
-        sig_version = SigVersion::BASE;
-    } else {
-        sig_version = SigVersion::WITNESS_V0;
-    }
-    return EvalScript(stack, script_sig, flags, FuzzedSignatureChecker(), sig_version, nullptr);
+    SigVersion sig_version = (version == 0) ? SigVersion::BASE : SigVersion::WITNESS_V0;
+
+    return EvalScript(stack, script, 0, FuzzedSignatureChecker(), sig_version, nullptr);
 }
 
 std::optional<bool> Bitcoin::descriptor_parse(std::string str) const
