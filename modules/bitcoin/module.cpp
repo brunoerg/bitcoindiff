@@ -2,11 +2,13 @@
 
 #include "module.h"
 #include "descriptor.h"
+#include "chainparams.h"
 #include "script/script.h"
 #include "script/interpreter.h"
 #include "primitives/block.h"
 #include "primitives/transaction.h"
 #include "consensus/validation.h"
+#include "util/chaintype.h"
 #include "streams.h"
 #include "validation.h"
 
@@ -67,9 +69,15 @@ std::optional<bool> Bitcoin::script_eval(const std::vector<uint8_t>& input_data,
 
 std::optional<bool> Bitcoin::descriptor_parse(std::string str) const
 {
+    // TODO: Move it to a constructor
+    static ECC_Context ecc_context{};
+    SelectParams(ChainType::MAIN);
+
+
     FlatSigningProvider signing_provider;
     std::string error;
-    const auto desc = Parse(str, signing_provider, error, /*require_checksum=*/true);
+    const auto desc = Parse(str, signing_provider, error, /*require_checksum=*/false);
+    std::cout << error << std::endl;
     return !desc.empty();
 }
 
