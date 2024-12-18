@@ -72,3 +72,4 @@ FUZZ=target_name ./bitcoinfuzz
 - btcd: https://github.com/btcsuite/btcd/issues/2199
 - rust-bitcoin: https://github.com/brunoerg/bitcoinfuzz/issues/57
 - rust-bitcoin: CVE-2024-44073
+- rust-miniscript: https://github.com/rust-bitcoin/rust-miniscript/issues/785
