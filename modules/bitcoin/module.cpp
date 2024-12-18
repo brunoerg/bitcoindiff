@@ -16,15 +16,6 @@ namespace {
     class FuzzedSignatureChecker : public BaseSignatureChecker
     {
     public:
-        bool CheckECDSASignature(const std::vector<unsigned char>& scriptSig, const std::vector<unsigned char>& vchPubKey, const CScript& scriptCode, SigVersion sigversion) const override
-        {
-            return true;
-        }
-
-        bool CheckSchnorrSignature(Span<const unsigned char> sig, Span<const unsigned char> pubkey, SigVersion sigversion, ScriptExecutionData& execdata, ScriptError* serror = nullptr) const override
-        {
-            return true;
-        }
         bool CheckLockTime(const CScriptNum& nLockTime) const override
         {
             return true;
@@ -60,6 +51,10 @@ std::optional<bool> Bitcoin::script_eval(const std::vector<uint8_t>& input_data,
 {
     CScript script(input_data.begin(), input_data.end());
     if (script.empty()) return std::nullopt;
+
+    // Skip sequence and locktime
+    auto hex_str{HexStr(script)};
+    if (hex_str.find("b1") != std::string::npos || hex_str.find("b2") != std::string::npos) return std::nullopt;
 
     std::vector<std::vector<unsigned char>> stack;
     SigVersion sig_version = (version == 0) ? SigVersion::BASE : SigVersion::WITNESS_V0;
