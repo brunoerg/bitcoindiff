@@ -1,8 +1,8 @@
 use std::os::raw::c_char;
 use std::ffi::CStr;
-use std::str::{FromStr, Utf8Error};
+use std::str::Utf8Error;
 
-use miniscript::{Descriptor, DescriptorPublicKey};
+use miniscript::Descriptor;
 use miniscript::bitcoin::secp256k1;
 
 
