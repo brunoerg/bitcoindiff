@@ -1,9 +1,9 @@
 use std::os::raw::c_char;
 use std::ffi::CStr;
-use std::str::{FromStr, Utf8Error};
+use std::str::Utf8Error;
 
-use miniscript::{DefiniteDescriptorKey, Descriptor};
-use miniscript::policy::Liftable;
+use miniscript::Descriptor;
+use miniscript::bitcoin::secp256k1;
 
 
 unsafe fn c_str_to_str<'a>(input: *const c_char) -> Result<&'a str, Utf8Error> {
@@ -16,26 +16,9 @@ pub unsafe extern "C" fn rust_miniscript_descriptor_parse(input: *const c_char) 
         return false;
     };
 
-    match Descriptor::<miniscript::bitcoin::PublicKey>::from_str(desc) {
-        Err(_) => {
-            match Descriptor::<miniscript::bitcoin::XOnlyPublicKey>::from_str(desc) {
-                Err(_) => {
-                    match Descriptor::<DefiniteDescriptorKey>::from_str(desc) {
-                        Err(_) => {
-                            return false;
-                        },
-                        Ok(d) => {
-                            return d.sanity_check().is_ok();
-                        }
-                    }
-                },
-                Ok(d) => {
-                    return d.sanity_check().is_ok();
-                }
-            }
-        },
-        Ok(d) => {
-            return d.sanity_check().is_ok();
-        }
+    let secp = &secp256k1::Secp256k1::signing_only();
+    match Descriptor::parse_descriptor(&secp, desc) {
+        Err(_) => false,
+        Ok((d, _)) => d.sanity_check().is_ok()
     }
 }
