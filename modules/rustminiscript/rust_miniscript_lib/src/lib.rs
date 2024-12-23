@@ -17,7 +17,7 @@ pub unsafe extern "C" fn rust_miniscript_descriptor_parse(input: *const c_char) 
     };
 
     let secp = &secp256k1::Secp256k1::signing_only();
-    match Descriptor::parse_descriptor(&secp, desc) {
+    match Descriptor::parse_descriptor(secp, desc) {
         Err(_) => false,
         Ok((d, _)) => d.sanity_check().is_ok()
     }
